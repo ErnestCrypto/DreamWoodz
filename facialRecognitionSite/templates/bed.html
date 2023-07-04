@@ -1,0 +1,353 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style%}
+{% static 'css/style.css' %}
+{% endblock %}
+{% block content %} 
+<!-- landing page -->
+<div class="container">
+        {% include 'nav.html' %}
+
+</div>
+
+
+<div class="container2">
+    <div class="model">
+      <h1>cart</h1>
+      <br />
+
+      <div class="cart">
+        <header>
+            <div>PRODUCT</div>
+            <div>PRICE</div>
+            <div>QUANTITY</div>
+        </header>
+        <br>
+        <div class="cart-items">
+
+            <!-- <div class="hori-1">
+                <div class="items">
+                    <img src="../IMAGES/w1.jpg" alt="">
+                    <p>product name</p>
+                </div>
+
+                <div class="price">
+                    <p>GH₵<span class="cart-price">450</span></p>
+                </div>
+
+                <div class="quantity">
+                    <input type="number" class="cart-quantity-input" name="" id="numb" value="1">
+                    <button class="rm" id="remove">Remove</button>
+                </div>
+            </div>  --> 
+        </div>
+        <br>
+        <div class="total">
+            <p>total: GH₵<span class="sum">00.00</span></p>
+        </div>
+
+        <br>
+        <div class="purchase">
+            <button class="purchase">check out</button>
+        </div>
+    </div>
+     
+      <br />
+      <button id="close">close</button>
+    </div>
+  </div>
+</div>
+<div class="product-container">
+    <div class="product-head">
+        <div class="p-left">
+            <h1>Beds</h1>
+        </div>
+        <div class="p-right">
+            <img src="{% static 'IMAGES/bedbg-removebg-preview.png'%}" alt="">
+        </div>
+    </div>
+    <div class="category">
+        <ul>
+             <li><a href="{% url 'facialRocognitionUrls:chairPage'%}">Chair</a></li>
+            <li><a href="{% url 'facialRocognitionUrls:sofaPage'%}">Sofa</a></li>
+            <li><a href="{% url 'facialRocognitionUrls:bedPage'%}">Bed</a></li>
+            <li><a href="{% url 'facialRocognitionUrls:deskPage'%}">Desk</a></li>
+            <li><a href="{% url 'facialRocognitionUrls:wordropePage'%}">Wardrope</a></li>
+            <li><a href="#">Extra</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+    <div class="row">
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/bed1.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name 1</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b2.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name 2</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b7.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b3.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b4.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b5.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name 1</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b6.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name 2</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b7.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b8.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b9.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b2.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name 1</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b4.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name 2</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b6.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b5.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+        <!-- /////////////////////////// -->
+        <div class="products">
+            <img class="image" src="{% static 'IMAGES/b3.jpg'%}" alt="">
+            <div class="middle">
+                <div class="text"><h2>Add To Cart</h2></div>
+              </div>
+            <h4 class="item-title">Product Name</h4>
+            <div class="rating">
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/material-sharp/24/4a90e2/star--v1.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+                <img class="star" src="https://img.icons8.com/small/16/4a90e2/star.png"/>
+            </div>
+            <p>GH₵<span class="shop-item-price">450</span> </p>
+            <button class="add">add to cart</button>
+        </div>
+    </div>
+</div>
+
+
+
+<footer>
+    <p>&copy 2021 DreamWoodz</p>  
+</footer>
+{% endblock %}

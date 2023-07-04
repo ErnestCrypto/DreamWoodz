@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style%}
+{% static 'css/style.css' %}
+{% endblock %}
+{% block content %} 
+    <!-- landing page -->
+    <div class="container">
+            {% include 'nav.html' %}
+
+    </div>
+
+    <div class="container2">
+        <div class="model">
+        <h1>cart</h1>
+        <br />
+
+        <div class="cart">
+            <header>
+                <div>PRODUCT</div>
+                <div>PRICE</div>
+                <div>QUANTITY</div>
+            </header>
+            <br>
+            <div class="cart-items">
+
+                <!-- <div class="hori-1">
+                    <div class="items">
+                        <img src="../IMAGES/w1.jpg" alt="">
+                        <p>product name</p>
+                    </div>
+
+                    <div class="price">
+                        <p>GH₵<span class="cart-price">450</span></p>
+                    </div>
+
+                    <div class="quantity">
+                        <input type="number" class="cart-quantity-input" name="" id="numb" value="1">
+                        <button class="rm" id="remove">Remove</button>
+                    </div>
+                </div>  --> 
+            </div>
+            <br>
+            <div class="total">
+                <p>total: GH₵<span class="sum">00.00</span></p>
+            </div>
+
+            <br>
+            <div class="purchase">
+                <button class="purchase">check out</button>
+            </div>
+        </div>
+        
+        <br />
+        <button id="close">close</button>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="cont">
+        <h1>About Us</h1>
+        <br>
+        <p>DreamWoodz is a platform for furniture manufacturers 
+             who would like to advertise <br> furniture products as well as 
+             customers who seek quality and affordable furniture <br> for upmost comfort. 
+             The app is a web app geared towards the provision of furnished <br>furniture ware 
+             such as office chairs and tables, dining tables and chairs, <br>
+              beds, and the like to customers. The web app allows customers to purchase goods <br>
+              from the comfort of their homes. </p>
+
+        
+    </div>
+
+
+
+    <footer>
+        <p>&copy 2021 DreamWoodz</p> 
+    </footer>
+    
+{% endblock %}
+    

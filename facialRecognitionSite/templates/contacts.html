@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style%}
+{% static 'css/style.css' %}
+{% endblock %}
+{% block content %} 
+<!-- landing page -->
+<div class="container">
+        {% include 'nav.html' %}
+
+</div>
+<main>
+
+    <div class="container-m">
+        <div class="header">
+            <h2>Contact Us</h2>
+        </div>
+        <form id="form" class="form">
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Username" id="username" />
+                
+            </div>
+            <div class="form-control">
+                <label for="username">Email</label>
+                <input type="email" placeholder="example@gmail.com" id="email" />
+                
+            </div>
+            
+            <div class="form-control">
+                <label for="message">Message</label>
+                <br>
+                <textarea name="message" id="" cols="108" rows="10"></textarea>
+            </div>
+            
+            <button class="ac-submit">Send</button>
+        </form>
+    </div>
+    
+</main>
+{% endblock %}

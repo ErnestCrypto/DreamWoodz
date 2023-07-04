@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'facialRecognitionSite.apps.FacialrecognitionsiteConfig',
+    'logs.apps.LogsConfig',
+    'profiles.apps.ProfilesConfig',
+    
     'rest_framework',
 ]
 

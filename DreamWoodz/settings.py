@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'facialRecognitionSite.apps.FacialrecognitionsiteConfig',
     'logs.apps.LogsConfig',
     'profiles.apps.ProfilesConfig',
-    
     'rest_framework',
 ]
 

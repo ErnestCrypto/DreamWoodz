@@ -31,7 +31,7 @@ def get_user(users):
     return auth_user
 
 def face(request):
-    video_capture = cv2.VideoCapture(-1)
+    video_capture = cv2.VideoCapture(0)
     users = User.objects.all()
     known_face_encodings=[]
     known_face_names=[]

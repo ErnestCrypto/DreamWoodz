@@ -44,6 +44,7 @@ def face(request):
     # Load a sample picture and learn how to recognize it.
         sample_image = face_recognition.load_image_file(f"..{user.image.url}")
         sample_image_containers.append(sample_image)
+        
         sample_face_encoding = face_recognition.face_encodings(sample_image)[0]
         
         sample_face_encoding_containers.append(sample_face_encoding)
@@ -60,6 +61,7 @@ def face(request):
 
         # Only process every other frame of video to save time
         if process_this_frame:
+            print(sample_image_containers)
             # Resize frame of video to 1/4 size for faster face recognition processing
             small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
 

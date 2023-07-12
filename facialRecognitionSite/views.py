@@ -32,6 +32,9 @@ def get_user(users):
 
 def face(request):
     video_capture = cv2.VideoCapture(0)
+    if not video_capture.isOpened():
+        raise IOError("Cannot open webcam")
+
     users = User.objects.all()
     known_face_encodings=[]
     known_face_names=[]

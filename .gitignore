@@ -163,7 +163,7 @@ cython_debug/
 # environment variables
 DreamWoodz/.env
 #extra apps
-logs
+.logs
 profiles
 # virtual env
 venv

@@ -85,7 +85,7 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     #######
-    # 'default': {
+    'default': {
         'ENGINE': env('ENGINE'),
         'HOST': env('HOST'),
         'NAME': env('DATABASE_NAME'),

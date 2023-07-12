@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'facialRecognitionSite.apps.FacialrecognitionsiteConfig',
-    # 'rest_framework',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

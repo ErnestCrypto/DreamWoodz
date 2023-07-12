@@ -172,4 +172,4 @@ venv
 face_recognition
 
 #photo
-facialRecognitionSite/media/photos
+media/photos

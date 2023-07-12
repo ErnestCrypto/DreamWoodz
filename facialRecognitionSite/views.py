@@ -47,7 +47,7 @@ def face(request):
     # Load a sample picture and learn how to recognize it.
         sample_image = face_recognition.load_image_file(f".{user.image.url}")
         sample_image_containers.append(sample_image)
-        print(sample_image.shape)
+        
         sample_face_encoding = face_recognition.face_encodings(sample_image)[0]
         
         sample_face_encoding_containers.append(sample_face_encoding)

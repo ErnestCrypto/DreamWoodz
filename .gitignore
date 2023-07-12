@@ -176,4 +176,7 @@ media/photos
 
 extra
 
-static
+build_files.sh
+
+vercel.json
+

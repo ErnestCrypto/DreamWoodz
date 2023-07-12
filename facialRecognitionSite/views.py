@@ -31,7 +31,7 @@ def get_user(users):
     return auth_user
 
 def face(request):
-    video_capture = cv2.VideoCapture(0)
+    video_capture = cv2.VideoCapture()
     if not video_capture.isOpened():
         raise IOError("Cannot open webcam")
 

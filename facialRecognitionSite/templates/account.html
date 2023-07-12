@@ -8,7 +8,7 @@
 {% block content %} 
 <!-- landing page -->
 <div class="container">
-       {% include 'nav.html' %}
+     
 
 </div>
 <main>
@@ -17,36 +17,44 @@
         <div class="header">
             <h2>Create Account</h2>
         </div>
-        <form id="form" class="form">
+        <form action="{% url 'facialRocognitionUrls:accountPage' %}" method="post" id="form" class="form" enctype="multipart/form-data">
+            {% csrf_token %} 
             <div class="form-control">
                 <label for="username">Username</label>
-                <input type="text" placeholder="Username" id="username" />
+                <input type="text" placeholder="Username" id="username" name="username" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username">Email</label>
-                <input type="email" placeholder="example@gmail.com" id="email" />
+                <label for="email">Email</label>
+                <input type="email" placeholder="example@gmail.com" id="email" name="email"/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username">Password</label>
-                <input type="password" placeholder="Password" id="password"/>
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password" />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
             <div class="form-control">
-                <label for="username">Confirm Password</label>
-                <input type="password" placeholder="Password" id="password2"/>
+                <label for="password">Confirm Password</label>
+                <input type="password" placeholder="Password" id="password2" name="password"/>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
             </div>
-            <button class="ac-submit">Submit</button>
+            <div class="form-control">
+                <label for="picture">Upload Picture</label>
+                <input type="file"  accept = "image/*"  name="image"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                
+            </div>
+            <button class="ac-submit" type="submit">Submit</button>
             
             
         </form>

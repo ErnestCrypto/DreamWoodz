@@ -1,13 +1,15 @@
 <div class="navbar">
         <div class="logo">
-            <p><a href="{% url 'facialRocognitionUrls:indexPage'%}">DreamWoodz</a> </p>
+            <p><a href="{% url 'facialRocognitionUrls:indexPage' pk %}">DreamWoodz,{{logged.username}}</a> </p>
+            
+
         </div>
         <nav>
             <ul>
-                <li><a href="{% url 'facialRocognitionUrls:indexPage'%}">home</a></li>
-                <li><a href="{% url 'facialRocognitionUrls:aboutPage'%}">about</a></li>
-                <li><a href="{% url 'facialRocognitionUrls:accountPage'%}">account</a></li>
-                <li><a href="{% url 'facialRocognitionUrls:contactsPage'%}">contact</a></li>
+                <li><a href="{% url 'facialRocognitionUrls:indexPage' pk %}">home</a></li>
+                <li><a href="{% url 'facialRocognitionUrls:aboutPage' pk %}">about</a></li>
+                <li><a href="{% url 'facialRocognitionUrls:accountPage' %}">account</a></li>
+                <li><a href="{% url 'facialRocognitionUrls:contactsPage' pk %}">contact</a></li>
             </ul>
         </nav>
         

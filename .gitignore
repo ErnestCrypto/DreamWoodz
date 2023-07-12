@@ -162,6 +162,7 @@ cython_debug/
 
 # environment variables
 DreamWoodz/.env
+#extra apps
 logs
 profiles
 # virtual env
@@ -170,3 +171,5 @@ venv
 # facial recognition
 face_recognition
 
+#photo
+facialRecognitionSite/media/photos

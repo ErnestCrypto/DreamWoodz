@@ -107,14 +107,19 @@ def face(request):
             pk = logged_user[0].id
             print(pk)
             break
+
         # Hit 'q' on the keyboard to quit!
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord('q'):    
             break
+        
     # Release handle to the webcam
     video_capture.release()
     cv2.destroyAllWindows()
-
-    return redirect('facialRocognitionUrls:indexPage',pk)
+    
+    if pk == 0:
+        return render(request, 'account.html', {})
+    else:
+        return redirect('facialRocognitionUrls:indexPage',pk)
 
 
 

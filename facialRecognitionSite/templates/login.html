@@ -8,6 +8,8 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
 <title>Login</title>
 </head>
 <body>
@@ -37,10 +39,21 @@
 </div> {% endcomment %}
 
 
-<div class="text-center">
+<div class="text-center login" >
+<h1>Login</h1>
+<h4>Welcome to DreamWoodz click the login button below to log into your account using facial recognition
+</h4>
 
+<h5>NB:Please note that the facial recognition feature
+    may take sometime to load depending on the 
+    hardware requirements of your machine
+</h5>
 <a class="btn btn-primary" id="start-camera" href="{% url 'facialRocognitionUrls:face' %}">login</a>
-
+<h5>If you don't have an account yet you can press the
+    letter "q" on your keyboard to close the facial recognition
+feature and create an <a href="{% url 'facialRocognitionUrls:accountPage' %}">account</a>  first.
+</h5>
+</h5>
 </div> 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

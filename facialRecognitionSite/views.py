@@ -2,7 +2,7 @@ from os import path
 from urllib.request import urlopen
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from profiles.models import *
+
 from .models import *
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
@@ -17,6 +17,19 @@ import cv2
 import numpy as np
 
 
+
+def get_user(users):
+    auth_user = []
+    for user in users:
+        # Load a sample picture and learn how to recognize it.
+        try:
+            sample_image = face_recognition.load_image_file(f".{user.image.url}")
+            sample_face_encoding = face_recognition.face_encodings(sample_image)[0]
+            auth_user.append(user)
+        except:
+            pass
+    return auth_user
+
 def face(request):
     video_capture = cv2.VideoCapture(0)
     users = User.objects.all()
@@ -27,11 +40,12 @@ def face(request):
     context ={}
     pk=0
    
-    for user in users:
+    for user in get_user(users):
     # Load a sample picture and learn how to recognize it.
         sample_image = face_recognition.load_image_file(f".{user.image.url}")
         sample_image_containers.append(sample_image)
         sample_face_encoding = face_recognition.face_encodings(sample_image)[0]
+        
         sample_face_encoding_containers.append(sample_face_encoding)
         known_face_encodings.append(sample_face_encoding)
         known_face_names.append(str(user.id))
@@ -103,10 +117,11 @@ def face(request):
         cv2.imshow('Video', frame)
         
         if face_names:
-            logged_user = User.objects.filter(id=face_names[0])
-            pk = logged_user[0].id
-            print(pk)
-            break
+            if face_names[0] != 'Unknown':
+                logged_user = User.objects.filter(id=face_names[0])
+                pk = logged_user[0].id
+                print(pk)
+                break
 
         # Hit 'q' on the keyboard to quit!
         if cv2.waitKey(1) & 0xFF == ord('q'):    
@@ -117,7 +132,7 @@ def face(request):
     cv2.destroyAllWindows()
     
     if pk == 0:
-        return render(request, 'account.html', {})
+        return render(request, 'login.html', {})
     else:
         return redirect('facialRocognitionUrls:indexPage',pk)
 
@@ -167,9 +182,19 @@ class AccountView(TemplateView):
 class BedView(TemplateView):
     template_name = 'bed.html'
 
+    def get(self, request, pk):
+        logged = User.objects.get(id=pk)
+        return render(request, 'bed.html', {'pk': pk, 'logged': logged})
+
+
 
 class ChairView(TemplateView):
     template_name = 'chair.html'
+
+    def get(self, request, pk):
+        logged = User.objects.get(id=pk)
+        return render(request, 'chair.html', {'pk': pk, 'logged': logged})
+
 
 
 class ContactsView(TemplateView):
@@ -185,14 +210,24 @@ class ContactsView(TemplateView):
 class DeskView(TemplateView):
     template_name = 'desk.html'
 
+    def get(self, request, pk):
+        logged = User.objects.get(id=pk)
+        return render(request, 'desk.html', {'pk': pk, 'logged': logged})
 
-class FaceView(TemplateView):
-    template_name = 'face.html'
 
 
 class SofaView(TemplateView):
     template_name = 'sofa.html'
 
+    def get(self, request, pk):
+        logged = User.objects.get(id=pk)
+        return render(request, 'sofa.html', {'pk': pk, 'logged': logged})
+
+
 
 class WordropeView(TemplateView):
     template_name = 'wordrope.html'
+
+    def get(self, request, pk):
+        logged = User.objects.get(id=pk)
+        return render(request, 'wordrope.html', {'pk': pk, 'logged': logged})
